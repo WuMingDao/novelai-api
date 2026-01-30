@@ -20,7 +20,8 @@
     "discord.js": "^14.25.1",
     "discordx": "^11.13.3",
     "express": "^5.2.1",
-    "nekoai-js": "^1.2.5"
+    "nekoai-js": "^1.2.5",
+    "undici": "^7.19.2"
   },
   "devDependencies": {
     "@dotenvx/dotenvx": "^1.52.0",
