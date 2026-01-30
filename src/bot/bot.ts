@@ -1,15 +1,16 @@
 import { Client } from "discordx";
 import { IntentsBitField, Events, Interaction } from "discord.js";
-import { ProxyAgent } from "undici";
+import { ProxyAgent, setGlobalDispatcher } from "undici";
 import "./commands/nai.js";
 
 // 配置代理（如果设置了 HTTPS_PROXY 环境变量）
 const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY;
 if (proxyUrl) {
   const agent = new ProxyAgent(proxyUrl);
-  // @ts-expect-error 设置全局 dispatcher
-  global[Symbol.for("undici.globalDispatcher.1")] = agent;
+  setGlobalDispatcher(agent);
   console.log(`>> Using proxy: ${proxyUrl}`);
+} else {
+  console.log(">> No proxy configured (set HTTPS_PROXY env var to use proxy)");
 }
 
 const BOT_TOKEN = process.env.BOT_TOKEN || "";
