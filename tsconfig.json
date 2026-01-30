@@ -1,0 +1,7 @@
+{
+  "extends": "@tsconfig/node-lts/tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": false, // required
+    "experimentalDecorators": true // required
+  }
+}

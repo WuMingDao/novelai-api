@@ -1,0 +1,33 @@
+{
+  "name": "novelai-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "dotenvx run -- tsx watch src/server.ts",
+    "dev:bot": "dotenvx run -- tsx watch src/bot/bot.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "start:bot": "node dist/bot/bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.22.0",
+  "dependencies": {
+    "canvas": "^3.2.1",
+    "discord.js": "^14.25.1",
+    "discordx": "^11.13.3",
+    "express": "^5.2.1",
+    "nekoai-js": "^1.2.5"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.52.0",
+    "@tsconfig/node-lts": "^24.0.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.1.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
